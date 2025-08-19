@@ -88,20 +88,22 @@ public class SocketFactory {
         if (sslSocketFactory == null) {
             /* plain, optionally with proxy */
             result = new Socket(proxy);
+            result.setSoTimeout(timeout);
             result.connect(new InetSocketAddress(host, port), timeout);
         } else if (proxy == Proxy.NO_PROXY) {
             /* SSL without proxy */
             SSLSocket sslResult = (SSLSocket) sslSocketFactory.createSocket(host, port);
+            sslResult.setSoTimeout(timeout);
             sslResult.startHandshake();
             result = sslResult;
         } else {
             /* SSL with proxy */
             Socket proxySocket = new Socket(proxy);
             SSLSocket sslResult = (SSLSocket) sslSocketFactory.createSocket(proxySocket, host, port, true);
+            sslResult.setSoTimeout(timeout);
             sslResult.startHandshake();
             result = sslResult;
         }
-        result.setSoTimeout(timeout);
         return result;
     }
 
