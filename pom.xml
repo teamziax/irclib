@@ -2,7 +2,7 @@
 <!--
 
     IRClib - A Java Internet Relay Chat library
-    Copyright (C) 2006-2015 Christoph Schwering <schwering@gmail.com>
+    Copyright (C) 2006-2025 Christoph Schwering <schwering@gmail.com>
     and/or other contributors as indicated by the @author tags.
 
     This library and the accompanying materials are made available under the
@@ -19,7 +19,7 @@
 
     <groupId>org.schwering</groupId>
     <artifactId>irclib</artifactId>
-    <version>2.0.0.Alpha4-SNAPSHOT</version>
+    <version>2.0.1</version>
     <packaging>bundle</packaging>
 
     <name>IRClib</name>
@@ -72,8 +72,9 @@
     </issueManagement>
     <distributionManagement>
         <repository>
-            <id>bintray</id>
-            <url>https://api.bintray.com/maven/irclib/irclib/org.schwering:irclib</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/teamziax/irclib</url>
         </repository>
     </distributionManagement>
 
@@ -114,7 +115,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.0.1</version>
+                    <version>6.0.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -159,8 +160,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
 
@@ -180,7 +181,6 @@
                         <Export-Package>${irclib.osgi.export}</Export-Package>
                         <Import-Package>${irclib.osgi.import}</Import-Package>
                         <DynamicImport-Package>${irclib.osgi.dynamic}</DynamicImport-Package>
-                        <Private-Package>${irclib.osgi.private.pkg}</Private-Package>
                         <_versionpolicy>${irclib.osgi.import.default.version}</_versionpolicy>
                         <_failok>${irclib.osgi.failok}</_failok>
                     </instructions>
@@ -258,7 +258,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>3.2.8</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>

@@ -1,6 +1,6 @@
 /**
  * IRClib - A Java Internet Relay Chat library
- * Copyright (C) 2006-2015 Christoph Schwering <schwering@gmail.com>
+ * Copyright (C) 2006-2025 Christoph Schwering <schwering@gmail.com>
  * and/or other contributors as indicated by the @author tags.
  *
  * This library and the accompanying materials are made available under the
